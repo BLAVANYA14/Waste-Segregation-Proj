@@ -15,8 +15,14 @@ import plotly.graph_objects as go
 from src.transforms import get_transforms
 
 # ── Configuration ──────────────────────────────────────────────
+from pathlib import Path
+
 MODEL_NAME = "efficientnet_b2"
-MODEL_PATH = "models/best_1efficientnet_b2.pth"
+
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "models" / "best_1efficientnet_b2.pth"
+
+
 IMG_SIZE = 224
 CLASSES = ["cardboard", "glass", "metal", "paper", "plastic", "trash"]
 
