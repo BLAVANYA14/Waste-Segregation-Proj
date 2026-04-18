@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Classification - AI Powered Segregation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>♻️ Waste Classification</h1>
+            <p class="subtitle">AI-Powered Waste Segregation System</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📷</div>
+                    <p>Drag & drop an image here or click to upload</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+                
+                <div class="preview-container" id="previewContainer" style="display: none;">
+                    <img id="previewImage" src="" alt="Preview">
+                    <button class="clear-btn" id="clearBtn">✕ Clear</button>
+                </div>
+                
+                <button class="predict-btn" id="predictBtn" disabled>
+                    🔍 Classify Waste
+                </button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Classification Result</h2>
+                
+                <div class="result-card">
+                    <div class="predicted-class" id="predictedClass"></div>
+                    <div class="confidence" id="confidence"></div>
+                </div>
+
+                <div class="probabilities">
+                    <h3>All Probabilities</h3>
+                    <div class="prob-bars" id="probBars"></div>
+                </div>
+
+                <div class="disposal-guide" id="disposalGuide"></div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing image...</p>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>Powered by EfficientNet-B0 | Classes: {{ classes | join(', ') }}</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

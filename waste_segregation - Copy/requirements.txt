@@ -1,0 +1,22 @@
+torch
+torchvision
+timm
+albumentations
+opencv-python
+pandas
+scikit-learn
+Pillow
+requests
+tqdm
+kaggle
+matplotlib
+seaborn
+
+# Optional deployment / export
+onnx
+onnxruntime
+fastapi
+uvicorn
+flask
+streamlit
+plotly
