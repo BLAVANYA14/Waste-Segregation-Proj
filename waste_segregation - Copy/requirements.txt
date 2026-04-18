@@ -11,8 +11,6 @@ tqdm
 kaggle
 matplotlib
 seaborn
-
-# Optional deployment / export
 onnx
 onnxruntime
 fastapi
@@ -20,3 +18,4 @@ uvicorn
 flask
 streamlit
 plotly
+scipy
